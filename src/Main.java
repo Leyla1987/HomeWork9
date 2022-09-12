@@ -8,5 +8,7 @@ public class Main {
         Book numberOfKiller = new Book("Number of Killer", 2004, ivanSergeev);
         numberOfKiller.setPublishDate(2006);
         System.out.println(numberOfKiller);
+        System.out.println(warAndPeace.hashCode() == numberOfKiller.hashCode());
+        System.out.println(warAndPeace.equals(numberOfKiller));
     }
 }

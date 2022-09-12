@@ -1,4 +1,4 @@
-
+import java.util.Objects;
 
 public class Autor {
   private String name;
@@ -27,9 +27,26 @@ public class Autor {
     public void setSerName(String serName) {
         this.serName = serName;
     }
-        @Override
-        public String toString() {
-            return "автор: " + name + " " + serName;
-        }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Autor autor = (Autor) o;
+        return name.equals(autor.name) && serName.equals(autor.serName);
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, serName);
+    }
+
+    @Override
+    public String toString() {
+        return "Autor{" +
+                "name='" + name + '\'' +
+                ", serName='" + serName + '\'' +
+                '}';
+    }
+}
 
